@@ -14,5 +14,5 @@ Gem::Specification.new do |s|
   s.files       = Dir['README.md', 'lib/**/*.*']
   s.homepage    = 'https://github.com/dannyben/erbx'
   s.license     = 'MIT'
-  s.required_ruby_version = ">= 2.6.0"
+  s.required_ruby_version = ">= 2.4.0"
 end
