@@ -1,0 +1,17 @@
+require_relative 'lib/erbx'
+
+title   "ERBX Developer Toolbelt"
+summary "Runfile tasks for building the ERBX gem"
+version ERBX::VERSION
+
+help   "Generate changelog"
+action :changelog do
+  run 'github_changelog_generator --user dannyben --project erbx'
+  run "git commit -am 'update changelog' && git push"
+end
+
+help   "Run example"
+action :example do
+  template = ERBX.load 'example/template.md'
+  puts template.result
+end
