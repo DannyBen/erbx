@@ -41,7 +41,7 @@ You rolled {{ dice }}
 ```
 
 Render it with `ERBX.new`, which returns an `ERB` instance, after replacing
-the extended tags - `{{ }}` and `(( ))` with their `ERB` equivalents.
+the extended tags - `{{ }}` and `(( ))` - with their `ERB` equivalents.
 
 ```ruby
 # Render example

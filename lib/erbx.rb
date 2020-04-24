@@ -9,7 +9,9 @@ class ERBX
 
     def new(content)
       erb_content = expose_erb_tags content
-      ERB.new(erb_content, trim_mode: '%-')
+      ERB.new(erb_content, nil, '%-')
+      # The below syntax requires ruby >= 2.6
+      # ERB.new(erb_content, trim_mode: '%-')
     end
 
   private
