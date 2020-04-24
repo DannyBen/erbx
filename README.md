@@ -7,8 +7,8 @@
 
 ERBX is a tiny extension to ERB allowing these tags:
 
-- `{{ ... }}` as an equivalent to `<%= ... %>`
-- `(( ... ))` as an equivalent to `<%- ... %>`
+- `{{ ... }}` as an equivalent to `<%= ... %>` (print ruby code)
+- `(( ... ))` as an equivalent to `<%- ... -%>` (run ruby code)
 
 ---
 
@@ -40,6 +40,8 @@ You rolled {{ dice }}
 (( end ))
 ```
 
+Render it with `ERBX.new`, which returns an `ERB` instance, after replacing
+the extended tags - `{{ }}` and `(( ))` with their `ERB` equivalents.
 
 ```ruby
 # Render example
@@ -54,4 +56,13 @@ puts template.result
 #=> This roll of a dice happened on April 24, 2020.
 #=> You rolled [4, 2]
 ```
+
+## Contributing / Support
+
+If you experience any issue, have a question or a suggestion, or if you wish
+to contribute, feel free to [open an issue][issues].
+
+---
+
+[issues]: https://github.com/DannyBen/erbx/issues
 

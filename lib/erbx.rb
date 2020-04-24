@@ -3,8 +3,6 @@ require 'erbx/version'
 
 class ERBX
   class << self
-    attr_reader :content
-
     def load(filename)
       new File.read filename
     end
