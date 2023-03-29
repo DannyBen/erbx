@@ -15,12 +15,10 @@ class ERBX
 
     def expose_erb_tags(content)
       content
-        .gsub("((", "<%-")
-        .gsub("))", "-%>")
-        .gsub("{{", "<%=")
-        .gsub("}}", "%>")
+        .gsub('((', '<%-')
+        .gsub('))', '-%>')
+        .gsub('{{', '<%=')
+        .gsub('}}', '%>')
     end
   end
 end
-
-

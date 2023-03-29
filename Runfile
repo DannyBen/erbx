@@ -1,17 +1,9 @@
-require "runfile-tasks"
-require_relative 'lib/erbx'
+require 'erbx'
 
 title   "ERBX Developer Toolbelt"
 summary "Runfile tasks for building the ERBX gem"
-version ERBX::VERSION
 
-RunfileTasks::RubyGems.all 'erbx'
-
-help   "Generate changelog"
-action :changelog do
-  system 'github_changelog_generator --user dannyben --project erbx'
-  system "git commit -am 'update changelog' && git push"
-end
+import_gem 'runfile-tasks/gem'
 
 help   "Run example"
 action :example do
