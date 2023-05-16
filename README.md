@@ -10,17 +10,17 @@ ERBX is a tiny extension to ERB allowing these tags:
 - `{{ ... }}` as an equivalent to `<%= ... %>` (print ruby code)
 - `(( ... ))` as an equivalent to `<%- ... -%>` (run ruby code)
 
+Both tag pairs are configurable.
+
 ---
 
-Installation
---------------------------------------------------
+## Installation
 
 ```
 $ gem install erbx
 ```
 
-Usage
---------------------------------------------------
+## Usage
 
 Given this ERBX templalte:
 
@@ -55,6 +55,32 @@ puts template.result
 #=> 
 #=> This roll of a dice happened on April 24, 2020.
 #=> You rolled [4, 2]
+```
+
+## Custom Tags
+
+If you wish to use different tags in your template, you can provide them using
+these four options:
+
+- `code_open` - default `((`
+- `code_close` - default `))`
+- `output_open` - default `{{`
+- `output_close` - default `}}`
+
+For example:
+
+```ruby
+# Render example with options
+require 'erbx'
+
+template = ERBX.load 'example/template2.md', code_open: '===[', code_close: ']==='
+puts template.result_with_hash number: rand(100..999)
+#=> This template only uses output tags, and uses data provided by the caller.
+#=> This is useful when the file may contain (( markers like these )) that are
+#=> not intended to be interpreted as code.
+#=> 
+#=> Random number: 938
+
 ```
 
 ## Contributing / Support
