@@ -13,6 +13,14 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/dannyben/erbx'
   s.license     = 'MIT'
 
-  s.required_ruby_version = '>= 3.0.0'
-  s.metadata['rubygems_mfa_required'] = 'true'
+  s.required_ruby_version = '>= 3.2'
+
+  s.add_dependency 'erb', '>= 4.0'
+
+  s.metadata = {
+    'bug_tracker_uri'       => 'https://github.com/dannyben/erbx/issues',
+    'changelog_uri'         => 'https://github.com/dannyben/erbx/blob/master/CHANGELOG.md',
+    'source_code_uri'       => 'https://github.com/dannyben/erbx',
+    'rubygems_mfa_required' => 'true',
+  }
 end
