@@ -1,5 +1,7 @@
 # ERBX - ERB Extended with Pretty Tags
 
+![repocard](https://repocard.dannyben.com/svg/erbx.svg)
+
 ERBX is a tiny extension to ERB allowing these tags:
 
 - `{{ ... }}` as an equivalent to `<%= ... %>` (print ruby code)
